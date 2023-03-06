@@ -1,3 +1,10 @@
+//xiajiehan add for 2023/03/06 用于设置构建gradle使用的插件以及依赖下载远程仓库地址
+buildscript {
+	repositories {
+		maven {url "https://repo.spring.io/plugins-release"}
+	}
+}
+
 plugins {
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE' apply false
 	id 'io.spring.nohttp' version '0.0.10'
@@ -290,8 +297,12 @@ configure(allprojects) { project ->
 			cacheChangingModulesFor 0, "seconds"
 		}
 		repositories {
+			//xiajiehan001 add for 2023/03/06 设置项目私服，依赖从此下载
+			maven {url "https://maven.aliyun.com/repository/public"}
 			mavenCentral()
 			maven { url "https://repo.spring.io/libs-spring-framework-build" }
+			//xiajiehan001 add for 2023/03/06 设置项目私服，依赖从此下载
+			maven {url "https://repo.spring.io/plugins-release"}
 		}
 	}
 	configurations.all {

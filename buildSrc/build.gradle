@@ -3,6 +3,8 @@ plugins {
 }
 
 repositories {
+	//xiajiehan001 add for 2023/03/06 设置项目私服，依赖从此下载
+	maven {url "https://maven.aliyun.com/repository/public"}
 	mavenCentral()
 	gradlePluginPortal()
 }
